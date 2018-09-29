@@ -1,0 +1,403 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.padding-top100 {
+    padding-top: 80px;
+}
+
+.padding-bot100 {
+    padding-bottom: 80px;
+}
+
+body {
+    position: relative;
+    padding-bottom: 0;
+}
+
+/*.nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+    .nav ul li a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+.nav ul li:hover {
+    border-bottom: 2px solid;
+    -webkit-transition: all 0.5s;
+    transition: all 0.2s ease;
+}
+
+.nav {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s linear;
+    width: 100%;
+    height: 80px;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 7px;
+    font-size: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+    .nav .login-button {
+        width: 120px;
+        cursor: pointer;
+        margin-left: 230px;
+        padding: 5px 15px;
+        -webkit-transition: all 0.8s;
+        transition: all 0.5s linear;
+    }
+
+        .nav .login-button:hover {
+            background-color: white;
+            color: black;
+            border-radius: 8px;
+            -webkit-transition: all 0.8s;
+            transition: all 0.5s linear;
+        }
+
+        .nav .login-button i {
+            padding-right: 10px;
+        }
+
+    .nav ul {
+        margin-bottom: 0;
+    }
+
+        .nav ul li {
+            margin-right: 30px;
+            cursor: pointer;
+        }*/
+
+.sticky {
+    position: fixed;
+    top: 0;
+    background-color: white;
+    color: black;
+    height: 60px;
+    padding-top: 15px;
+    font-size: 18px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s linear;
+    z-index: 100;
+    box-shadow: 3px 2px 1px -3px rgba(0,0,0,0.34);
+    -webkit-box-shadow: 3px 2px 5px -3px rgba(0,0,0,0.34);
+    -moz-box-shadow: 3px 2px 1px -3px rgba(0,0,0,0.34);
+}
+
+    .sticky ul li a, .sticky ul li a:hover {
+        font-size: 18px;
+        padding-top: 15px;
+        color: black;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s linear;
+    }
+
+
+.body-content {
+    padding: 0;
+}
+
+.container {
+    max-width: 100%;
+}
+
+.nav {
+    padding: 8px 0;
+}
+
+.navbar-brand {
+    line-height: 38px;
+}
+
+.banner {
+    background-image: url('images/bannerr.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+    .banner .text p {
+        font-size: 40px;
+        padding-top: 200px;
+        padding-bottom: 23px;
+        font-family: 'Roboto Condensed', sans-serif;
+        color: white;
+    }
+
+.b {
+    width: 100%;
+    padding-bottom: 253px;
+}
+
+.button1 {
+    width: 180px;
+    height: 50px;
+    border: 1.5px solid white;
+    background: white;
+    font-size: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    -webkit-transition: width 0.5s;
+    transition: all 0.5s linear;
+    border-radius: 30px;
+}
+
+.banner a, .banner a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.button1:hover {
+    border: 3px solid;
+    background: transparent;
+}
+
+.about {
+    background-color: white;
+}
+
+    .about img {
+        border-radius: 10px;
+        width: 585px;
+        height: 370px;
+        position: absolute;
+    }
+
+    .about h5 {
+        font-size: 14px;
+        color: #bbb;
+    }
+
+    .about h1 {
+        margin-bottom: 50px;
+    }
+
+    .about .heading {
+        width: 90%;
+        margin-left: 5%;
+        position: relative;
+    }
+
+        .about .heading p {
+            margin-top: 60px;
+        }
+
+.step h4 {
+    margin-bottom: 75px;
+    color: grey;
+    font-style: italic;
+}
+
+.step .pannel {
+    padding: 40px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 30px 0 rgba(0,0,0,.1);
+    margin-bottom: 50px;
+}
+
+    .step .pannel .text {
+        margin-top: 30px;
+    }
+
+.step {
+    background-color: #f5f8fa;
+}
+
+    .step .pannel h4 {
+        margin: 30px 0;
+    }
+
+.find-doctor {
+    background-color: #f5f8fa;
+}
+
+    .find-doctor .panel {
+        font-family: 'Source Sans Pro', sans-serif;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+        margin-bottom: 50px;
+        transition: all 0.5s ease;
+        cursor: pointer;
+    }
+
+        .find-doctor .panel .sub-panel {
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .find-doctor .panel .image {
+            width: 40%;
+        }
+
+        .find-doctor .panel .text {
+            width: 60%;
+        }
+
+        .find-doctor .panel:hover {
+            cursor: pointer;
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,.3);
+            transition: all 0.5s ease;
+        }
+
+        .find-doctor .panel .btn {
+            margin-left: 130px;
+        }
+
+        .find-doctor .panel .btn {
+            position: relative;
+            display: block;
+            /*padding: 7px 24px;*/
+            overflow: hidden;
+            border-width: 0;
+            outline: none;
+            border-radius: 2px;
+            /*box-shadow: 0 1px 4px rgba(0, 0, 0, .6);*/
+            font-weight: 700;
+            background-color: white;
+            color: black;
+            transition: background-color .3s;
+        }
+
+            .find-doctor .panel .btn:hover, .find-doctor .panel .btn:focus {
+                background-color: #3db5ed;
+                color: white;
+            }
+
+            .find-doctor .panel .btn > * {
+                position: relative;
+            }
+
+            .find-doctor .panel .btn span {
+            }
+
+            .find-doctor .panel .btn:before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: block;
+                width: 0;
+                padding-top: 0;
+                border-radius: 100%;
+                background-color: rgb(47, 112, 216);
+                -webkit-transform: translate(-50%, -50%);
+                -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            .find-doctor .panel .btn:active:before {
+                width: 120%;
+                padding-top: 120%;
+                transition: width .2s ease-out, padding-top .2s ease-out;
+            }
+
+    .find-doctor h1 {
+        margin-bottom: 50px;
+    }
+
+.footer .row {
+    margin-top: 50px;
+}
+
+.footer .footerlogo {
+    padding: 0 50px;
+}
+
+    .footer .footerlogo img {
+        width: 30%;
+    }
+
+.footer h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.footer {
+    background-color: #352a2a;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+    .footer h4 {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+.footegrey {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul {
+    padding: 0;
+}
+
+    .footer ul li a, .footer ul li {
+        list-style: none;
+        text-decoration: none;
+        color: grey;
+    }
+
+.footer {
+    padding-bottom: 50px;
+}
+
+.bar {
+    border-top: 1px solid grey;
+    padding: 8px 0;
+}
+
+    .bar p {
+        margin-bottom: 0;
+        font-size: 12px;
+        margin-left: 1000px;
+    }

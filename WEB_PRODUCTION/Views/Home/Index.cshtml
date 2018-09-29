@@ -1,0 +1,194 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/all.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="text">
+            <p class="text-center">
+                Find a Doctor<br>
+                Make an Appointment
+            </p>
+        </div>
+        <div class="b text-center">
+            <a href="#find-doctor" id="doctorbtn"><button class="button1">Find Doctor</button></a>
+        </div>
+    </div>
+
+    <!-- step -->
+    <div class="step padding-top100 padding-bot100">
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center">Discover the Online Appointment</h1>
+                <h4 class="text-center">Step by step to make an appointment</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pannel text-center">
+                        <div class="img">
+                            <img src="../Content/images/location.png">
+                        </div>
+                        <div class="text">
+                            <h4>
+                                <b>FIND A DOCTOR</b>
+                            </h4>
+                            <p>
+                               Find doctor list with their related department that you need. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="pannel text-center">
+                        <div class="img">
+                            <img src="../Content/images/computer.png">
+                        </div>
+                        <div class="text">
+                            <h4><b>VIEW PROFILE</b></h4>
+                            <p>
+                               See information of doctor such as, address, phone number,etc
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="pannel text-center">
+                        <div class="img">
+                            <img src="../Content/images/book.png">
+                        </div>
+                        <div class="text">
+                            <h4><b>BOOK A VISIT</b></h4>
+                            <p>
+                                Make an appointment by filling the require information of patient.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- about -->
+    
+
+    <!-- find doctor -->
+    <div class="find-doctor padding-top100 padding-bot100" id="find-doctor">
+        <div class="container">
+            <div class="row">
+                <h1 class="text-center">Find Doctor</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel">
+                        <div class="sub-panel">
+                            <div class="image">
+                                <img src="../Content/images/hospital.png" class="img img-responsive">
+                            </div>
+                            <div class="text">
+                                <h4>Primary Care</h4>
+                                <p><b>6</b> Doctors</p>
+                            </div>
+                        </div>
+                        @Html.ActionLink("More", "More", "Home", new { departmentname = "General" }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel">
+                        <div class="sub-panel">
+                            <div class="image">
+                                <img src="../Content/images/heart.png" class="img img-responsive">
+                            </div>
+                            <div class="text">
+                                <h4>Cardiology</h4>
+                                <p><b>4</b> Doctors</p>
+                            </div>
+                        </div>
+                        @Html.ActionLink("More", "More", "Home", new { departmentname = "Cardiology" }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel">
+                        <div class="sub-panel">
+                            <div class="image">
+                                <img src="../Content/images/mri.png" class="img img-responsive">
+                            </div>
+                            <div class="text">
+                                <h4>MRI Resonance</h4>
+                                <p><b>3</b> Doctors</p>
+                            </div>
+                        </div>
+                        @Html.ActionLink("More", "More", "Home", new { departmentname = "MRI-Resonance" }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel">
+                        <div class="sub-panel">
+                            <div class="image">
+                                <img src="Content/images/emotions.png" class="img img-responsive">
+                            </div>
+                            <div class="text">
+                                <h4>Psychologist</h4>
+                                <p><b>3</b> Doctors</p>
+                            </div>
+                        </div>
+                        @Html.ActionLink("More", "More", "Home", new { departmentname = "Psychologist" }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel">
+                        <div class="sub-panel">
+                            <div class="image">
+                                <img src="../Content/images/x-ray.png" class="img img-responsive">
+                            </div>
+                            <div class="text">
+                                <h4>X-ray</h4>
+                                <p><b>3</b> Doctors</p>
+                            </div>
+                        </div>
+                        @Html.ActionLink("More", "More", "Home", new { departmentname = "Radiology" }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel">
+                        <div class="sub-panel">
+                            <div class="image">
+                                <img src="../Content/images/anesthesia.png" class="img img-responsive">
+                            </div>
+                            <div class="text">
+                                <h4>Dentistry</h4>
+                                <p><b>4</b> Doctors</p>
+                            </div>
+                        </div>
+                        @Html.ActionLink("More", "More", "Home", new { departmentname = "Dental" }, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    
+                </div>
+                <div class="col-md-3">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+
+    <script type="text/javascript" src="jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

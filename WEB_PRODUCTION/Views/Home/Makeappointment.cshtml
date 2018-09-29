@@ -1,0 +1,29 @@
+﻿@model WEB_PRODUCTION.Models.Booking
+
+@{
+    ViewBag.Title = "Makeappointment";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        .main{
+            padding:100px 0;
+        }
+        h2{
+            margin-bottom:50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main text-center">
+        <h2>Making appointment is sucessful</h2>
+
+        @Html.ActionLink("View Token", "Token", null, new { @class = "btn btn-primary" })
+    </div>
+</body>
+</html>
+
+
+
+

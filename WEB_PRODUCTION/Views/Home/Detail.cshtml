@@ -1,0 +1,114 @@
+﻿@model WEB_PRODUCTION.Models.Doctor
+
+@{
+    ViewBag.Title = "Detail";
+    var image = "../Content/images/" + @Model.Name + ".jpg";
+    var latitude = @Model.Latitude;
+    var longitude = @Model.Longitude;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Detail</title>
+    <style>
+        body {
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 15px;
+            color: #999;
+            font-weight: 600;
+        }
+
+        h5 {
+            font-size: 18px;
+            color: #999;
+        }
+
+        h3 {
+            margin-bottom: 30px;
+        }
+
+        .data ul li {
+            list-style: none;
+            font-size: 15px;
+        }
+
+        .data {
+            font-size: 18px;
+        }
+
+        .map {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h3 class="text-center">Detail Information</h3>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="image">
+                            <img src="@image" alt="@Model.Name" class="img img-responsive" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="data">
+                            <h2>@Model.Name</h2>
+                            <p>@Model.Department - Department</p>
+                            <h5>Phone Number</h5>
+                            @Model.Phone <br />
+                          
+                            <h5>Address</h5>
+                            @Model.Address - <button class="btn" onclick="myFunction()">View on Map</button> <br /><br /><br />
+
+                            @Html.ActionLink("Make Booking", "Booking", "Home", new { doctorname = @Model.Name, department = @Model.Department, doctoraddr = @Model.Address }, new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="map" id="map"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function initMap() {
+            var myLatLng = { lat: -25.363, lng: 131.044 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 16
+            });
+            var marker = new google.maps.Marker({
+                setMap: map,
+                position: myLatLng,
+                title: 'Hello World!'
+            });
+        }
+        
+        function myFunction() {
+            var latitude = Number(@latitude);
+            var longitude = Number(@longitude);
+            var uluru = { lat: latitude, lng: longitude};
+            var mapProp = {
+                center: uluru,
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.hybrid
+            };
+            map = new google.maps.Map(document.getElementById('map'), mapProp);
+            var marker = new google.maps.Marker({ position: uluru, map: map });
+        };
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfQYMDZmPiwX39MM3jHU5IPj5FmAU23gE&callback=initMap"></script>
+</body>
+</html>
+
+
+

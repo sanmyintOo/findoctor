@@ -1,0 +1,87 @@
+﻿@model IEnumerable<WEB_PRODUCTION.Models.Doctor>
+
+@{
+    ViewBag.Title = "More";
+    int counter = 0;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>More</title>
+    <link rel="stylesheet" type="text/css" href="../Content/bootstrap.min.css">
+    <link href="../Content/site.css" rel="stylesheet" />
+    <style>
+        body {
+            margin-top: 80px;
+        }
+
+        .moredata {
+            width: 90%;
+            margin-left: 5%;
+        }
+
+            .moredata ul {
+                list-style: none;
+            }
+
+            .moredata .panel {
+                -webkit-box-shadow: 3px 7px 26px -9px rgba(0,0,0,0.75);
+                -moz-box-shadow: 3px 7px 26px -9px rgba(0,0,0,0.75);
+                box-shadow: 3px 7px 26px -9px rgba(0,0,0,0.75);
+                width: 300px;
+                border-radius: 10px;
+            }
+
+            .moredata .text {
+                margin: 15px 0;
+            }
+
+        .btn {
+            margin-left: 30px;
+            padding: 5px 30px;
+        }
+        .moredata .img {
+            width: 300px;
+            height: 350px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="moredata">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    if (counter != 0 && counter % 3 == 0)
+                    {
+                        @:</div>
+                        @:<div class="row">
+                    }
+
+                    var image = "../Content/images/" + @item.Name + ".jpg";
+                    <div class="col-md-4">
+                        <div class="panel">
+                            <div class="image">
+                                <img src="@image" class="img"/>
+                            </div>
+                            <div class="text">
+                                <ul>
+                                    <li><b>@item.Name</b></li>
+                                </ul>
+                                @Html.ActionLink("Detail", "Detail", "Home", new { name = @item.Name, department = @item.Department, phone = @item.Phone, price = @item.Price, address = @item.Address, latitude = @item.Latitude, longitude = @item.Longitude }, new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

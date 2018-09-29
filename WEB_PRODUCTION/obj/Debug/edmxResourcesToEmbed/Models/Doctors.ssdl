@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="My_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Address" Type="varchar" MaxLength="250" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="DoctorName" Type="varchar" MaxLength="50" />
+    <Property Name="BookingDate" Type="varchar" MaxLength="50" />
+    <Property Name="Bookingtime" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="300" />
+    <Property Name="Department" Type="varchar" MaxLength="50" />
+    <Property Name="DoctorAddress" Type="varchar" MaxLength="250" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'My_DB.dbo.Doctors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Doctors">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Department" />
+      <PropertyRef Name="Phone" />
+      <PropertyRef Name="Price" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Department" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="250" />
+    <Property Name="Price" Type="money" Nullable="false" />
+    <Property Name="Latitude" Type="float" />
+    <Property Name="Longitude" Type="float" />
+  </EntityType>
+  <EntityContainer Name="My_DBModelStoreContainer">
+    <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctors" EntityType="Self.Doctors" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Doctors].[ID] AS [ID], 
+    [Doctors].[Name] AS [Name], 
+    [Doctors].[Department] AS [Department], 
+    [Doctors].[Phone] AS [Phone], 
+    [Doctors].[Address] AS [Address], 
+    [Doctors].[Price] AS [Price], 
+    [Doctors].[Latitude] AS [Latitude], 
+    [Doctors].[Longitude] AS [Longitude]
+    FROM [dbo].[Doctors] AS [Doctors]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

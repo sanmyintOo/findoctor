@@ -1,0 +1,91 @@
+﻿@model WEB_PRODUCTION.Models.Booking
+
+@{
+    ViewBag.Title = "Booking";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Make Booking</title>
+    <style>
+        .formplace {
+            width: 40%;
+            margin-left: 30%;
+            padding: 50px 130px;
+           border-radius:20px;
+            background-color: white;
+           
+        }
+       
+        h3 {
+            margin-bottom: 50px;
+        }
+        .cover {
+            background-image: url('../../Content/images/cover.jpg');
+            background-position: center;
+            background-size: cover;
+            padding: 80px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="cover">
+        <h3 class="text-center">Please fill the following form to make appointment.</h3>
+        <div class="formplace">
+            @using (Html.BeginForm("Makeappointment", "Home", FormMethod.Post, new { @class = "login-form" }))
+            {
+                @Html.Hidden("docname", @Model.DoctorName)
+
+
+                @Html.Hidden("department", @Model.Department)
+
+                <div class="form-group">
+                    @Html.Label("Patient Name")
+                    @Html.TextBox("customername", null, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Patient Age")
+                    @Html.TextBox("age", null, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Address")
+                    @Html.TextBox("address", null, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Phone Number")
+                    @Html.TextBox("phno", null, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Date")
+                    @Html.DropDownList("Select Day", new List<SelectListItem>
+           {
+           new SelectListItem{Text="Monday", Value="Monday"},
+           new SelectListItem{Text="Tuesday", Value="Tuesday"},
+           new SelectListItem{Text="Wednesday", Value="Wednesday"},
+           }, null, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Desire Time")
+                    @Html.DropDownList("Select Desire Time", new List<SelectListItem>
+           {
+           new SelectListItem{Text="2 PM", Value="2pm"},
+           new SelectListItem{Text="3 PM", Value="3pm"},
+           new SelectListItem{Text="4 PM", Value="4pm"},
+           }, null, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Your medical problem")
+                    @Html.TextArea("desc", null, new { @class = "form-control" })
+                </div>
+
+                @Html.Hidden("docaddr", @Model.DoctorAddress)
+
+
+                <input type="submit" value="Make Booking" class="btn btn-default" />
+            }
+        </div>
+    </div>
+
+</body>
+</html>

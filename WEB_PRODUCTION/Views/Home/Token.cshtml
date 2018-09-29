@@ -1,0 +1,71 @@
+﻿@model WEB_PRODUCTION.Models.Booking
+
+@{
+    ViewBag.Title = "Token";
+}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TOken</title>
+    <style>
+        .main{
+            padding:80px 0;
+            font-size:16px;
+        }
+        .panel {
+            width:60%;
+            margin-left:20%;
+        }
+        table tr td {
+            padding:10px 0;
+        }
+        p {
+            font-size:20px;
+            font-weight:700;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="panel">
+            <h2>Booking Detail</h2>
+            <table>
+                <tr>
+                    <td>Booking Number:</td>
+                    <td><b> @Model.ID</b></td>
+                </tr>
+                <tr>
+                    <td>Doctor Name:</td>
+                    <td><b> @Model.DoctorName</b></td>
+                </tr>
+                <tr>
+                    <td>Department:</td>
+                    <td><b> @Model.Department</b> </td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><b> @Model.DoctorAddress</b> </td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><b> @Model.CustomerName</b></td>
+                </tr>
+                <tr>
+                    <td>Booking Date:</td>
+                    <td><b> @Model.BookingDate</b></td>
+                </tr>
+                <tr>
+                    <td>Booking Time:</td>
+                    <td><b> @Model.Bookingtime</b></td>
+                </tr>
+            </table> <br /><br />
+         
+            <p>Please note your Booking Number</p> <br /> <br />
+           @Html.ActionLink("OK", "Finish", "Home", null, new { @class="btn btn-primary"})
+            
+        </div> 
+    </div>
+</body>
+</html>
